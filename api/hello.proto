@@ -6,12 +6,12 @@ syntax = "proto3";
 option go_package = "pkg/grpc";
 
 // packageの宣言
-package myapp;
+package go_grpc;
 
 // サービスの定義
 service GreetingService {
 	// サービスが持つメソッドの定義
-	rpc Hello (HelloRequest) returns (HelloResponse); 
+	rpc Hello (HelloRequest) returns (HelloResponse);
 }
 
 // 型の定義

@@ -1,0 +1,30 @@
+// protoのバージョンの宣言
+syntax = "proto3";
+
+// protoファイルから自動生成させるGoのコードの置き先
+// (詳細は4章にて)
+option go_package = "pkg/grpc/pokemon";
+
+// packageの宣言
+package go_grpc;
+
+// サービスの定義
+service PokemonService {
+	// サービスが持つメソッドの定義
+	rpc Pokemon (PokemonRequest) returns (PokemonResponse);
+}
+
+// 型の定義
+message PokemonRequest {
+	int32 id = 1;
+}
+
+message PokemonResponse {
+  int32 id = 1;
+  string name = 2;
+  int32 base_experience = 3;
+  int32 height = 4;
+  bool is_default = 5;
+  int32 order = 6;
+  int32 weight = 7;
+}
